@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: /workspaces/poo-dd-ab-bloco-c-nandin2912/myrep/.tko/cache/poo/Readme.md
-  cache_timestamp: '2025-11-19 06:19:49'
+  cache_timestamp: '2025-11-19 22:07:17'
   filters:
   - listas
 expanded:
@@ -20,6 +20,8 @@ expanded:
 - poo@bloco_c-listas
 tasks:
   poo@budega: '{rate:100, human:amigo, iagen:sim, alone:3}'
+  poo@lapiseira: '{rate:100, human:amigo, iagen:ver_pequenos_erros_no_chat, alone:2,
+    study:3}'
 flags:
   quests: 0
   tracks: 0
@@ -27,4 +29,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@lapiseira
+selected: poo@pula-pula
