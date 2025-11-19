@@ -1,0 +1,94 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-09_22-54-04",
+            "content": "@@ -1,210 +1,2 @@\n-class Grafite:%0A    def __init__(self, calibre: float, dureza: str, tamanho: int):%0A        self.calibre = calibre%0A        self.dureza = dureza%0A        self.tamanho = tamanho%0A%0A    def desgaste_por_folha(self)   \n  \n+%0A\n",
+            "lines": "1"
+        },
+        {
+            "label": "2025-11-09_23-02-22",
+            "content": "@@ -1,202 +1,359 @@\n-class Grafite:%0A    def __init__(self, calibre: float, dureza: str, tamanho: int):%0A        self.calibre = calibre%0A        self.dureza = dureza%0A        self.tamanho = tamanho%0A%0A    def desgaste_por\n+@@ -1,8 +1,28 @@%0A+@@ -1,210 +1,35 @@%250A-%0A class Gr%0A@@ -27,17 +27,19 @@%0A Grafite:%0A-%250A%0A+%25250A%0A     def %0A@@ -96,17 +96,19 @@%0A o: int):%0A-%250A%0A+%25250A%0A         %0A@@ -129,17 +129,19 @@%0A  calibre%0A-%250A%0A+%25250A%0A         %0A@@ -160,17 +160,19 @@%0A = dureza%0A-%250A%0A+%25250A%0A         %0A@@ -193,18 +193,22 @@%0A  tamanho%0A-%250A%250A%0A+%25250A%25250A%0A     def %0A@@ -227,205 +227,98 @@%0A \n _fol\n+%0A-\n ha(s\n@@ -359,17 +359,19 @@\n self):  \n-%0A\n+%250A\n         \n@@ -381,91 +381,173 @@\n a = \n-%7B%22HB%22: 1, %222B%22: 2, %224B%22: 4, %226B%22: 6%7D%0A        return mapa.get(self.dureza, 1)%0A%0A\n+%257B%2522HB%2522: 1, %25222B%2522: 2, %25224B%2522: 4, %25226B%2522: 6%257D%250A        return mapa.get(self.dureza, 1)%250A%250A%0A+%250A+@@ -199,13 +199,12 @@%25250A %250A ha(self)%0A %250A %0A+:\n %0A    \n+%0A-\n def \n@@ -560,17 +560,19 @@\n _(self):\n-%0A\n+%250A\n         \n@@ -583,11 +583,17 @@\n rn f\n-%22%5B%7B\n+%2522%255B%257B\n self\n@@ -600,19 +600,23 @@\n .calibre\n-%7D:%7B\n+%257D:%257B\n self.dur\n@@ -622,11 +622,15 @@\n reza\n-%7D:%7B\n+%257D:%257B\n self\n@@ -641,348 +641,97 @@\n anho\n-%7D%5D%22      %0A%0A%0Aclass Lapiseira:%0A    def __init__(self, calibre: float):%0A        self.calibre = calibre%0A        self.bico = None%0A        self.tambor = %5B%5D   %0A%0A    def insert(self, grafite: Grafite):%0A        if grafite.calibre  != self.calibre:%0A            print(%22fail: calibre incompat%C3%ADvel%22)%0A            return%0A        self.tambor.append(grafite)%0A%0A\n+%257D%255D%2522        %0A+%250A@@ -28,9 +28,14 @@%250A elf)%250A-:%250A+%25250A-:%25250A%250A     %250A+ %25250A%0A %250A\n %0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-09_23-31-47",
+            "content": "@@ -727,30 +727,5 @@\n e)%0A%0A\n-    def pull(self):    %0A%0A\n %0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-09_23-33-24",
+            "content": "@@ -751,114 +751,6 @@\n    %0A\n-        if self.bico is not None:%0A            print(%22fail: ja existe grafite no bico%22)%0A            return%0A%0A%0A\n %0A%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2025-11-09_23-34-33",
+            "content": "@@ -857,163 +857,8 @@\n urn%0A\n-        if not self.tambor:%0A            print(%22fail: nao existe grafite no tambor%22)%0A            return%0A        self.bico = self.tambor.pop(0)%0A            %0A\n %0A%0A%0A%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-11_17-16-23",
+            "content": "@@ -1,1007 +1,38 @@\n-class Grafite:%0A    def __init__(self, calibre: float, dureza: str, tamanho: int):%0A        self.calibre = calibre%0A        self.dureza = dureza%0A        self.tamanho = tamanho%0A%0A    def desgaste_por_folha(self):  %0A        mapa = %7B%22HB%22: 1, %222B%22: 2, %224B%22: 4, %226B%22: 6%7D%0A        return mapa.get(self.dureza, 1)%0A%0A%0A    def __str__(self):%0A        return f%22%5B%7Bself.calibre%7D:%7Bself.dureza%7D:%7Bself.tamanho%7D%5D%22      %0A%0A%0Aclass Lapiseira:%0A    def __init__(self, calibre: float):%0A        self.calibre = calibre%0A        self.bico = None%0A        self.tambor = %5B%5D   %0A%0A    def insert(self, grafite: Grafite):%0A        if grafite.calibre  != self.calibre:%0A            print(%22fail: calibre incompat%C3%ADvel%22)%0A            return%0A        self.tambor.append(grafite)%0A%0A    def pull(self):    %0A        if self.bico is not None:%0A            print(%22fail: ja existe grafite no bico%22)%0A            return%0A        if not self.tambor:%0A            print(%22fail: nao existe grafite no tambor%22)%0A            return%0A        self.bico = self.tambor.pop(0)%0A%0A\n+@@ -998,44 +998,8 @@%0A p(0)%0A-%250A%250A\n     \n@@ -48,17 +48,19 @@\n e(self):\n-%0A\n+%250A\n         \n@@ -69,20 +69,11 @@\n   %0A \n+%250A\n    \n-        %0A%0A%0A%0A\n %0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-11_17-31-05",
+            "content": "@@ -1022,270 +1022,8 @@\n f):%0A\n-        if self.bico is None:%0A            print(%22fail: nao existe grafite no bico%22)%0A            return%0A        if self.bico.tamanho %3C= 10:%0A            print(%22fail:tamanho insuficiente%22)%0A            return%0A        %0A        gasto = self.bico.desgaste_por_folha()%0A%0A\n     \n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-18_17-01-25",
+            "content": "@@ -196,24 +196,26 @@\n folha(self):\n+  \n %0A        map\n@@ -296,16 +296,17 @@\n za, 1)%0A%0A\n+%0A\n     def \n@@ -383,16 +383,22 @@\n manho%7D%5D%22\n+      \n %0A%0A%0Aclass\n@@ -529,16 +529,19 @@\n bor = %5B%5D\n+   \n %0A%0A    de\n@@ -601,16 +601,17 @@\n calibre \n+ \n != self.\n@@ -738,24 +738,28 @@\n  pull(self):\n+    \n %0A        if \n@@ -1133,233 +1133,171 @@\n     \n-self.bico = None%0A%0A    def write(self):%0A        if self.bico is None:%0A            print(%22fail: nao existe grafite no bico%22)%0A            return%0A        if self.bico.tamanho %3C= 10:%0A            print(%22fail: tamanho insuficiente%22)\n+if self.bico.tamanho %3C= 10:%0A            print(%22fail:tamanho insuficiente%22)%0A            return%0A        %0A        gasto = self.bico.desgaste_por_folha()%0A%0A            \n %0A   \n@@ -1293,26 +1293,25 @@\n        %0A            \n-return\n+%0A%0A%0A%0A%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2025-11-18_17-06-23",
+            "content": "@@ -1360,202 +1360,4 @@\n turn\n-%0A        %0A        gasto = self.bico.desgaste_por_folha()%0A%0A        if self.bico.tamanho - gasto %3C 10:%0A            self.bico.tamanho = 10%0A            print(%22fail: folha incompleta%22)%0A            return\n",
+            "lines": "48"
+        },
+        {
+            "label": "2025-11-18_17-07-39",
+            "content": "@@ -1558,261 +1558,4 @@\n turn\n-%0A%0A            self.bico.tamanho -= gasto%0A%0A    def __str__(self):%0A        bico = str(self.bico) if self.bico else %22%5B%5D%22%0A        tambor = %22%3C%22 + %22%22.join(str(g) for g in self.tambor) + %22%3E%22%0A        return f%22calibre: %7Bself.calibre%7D, bico: %7Bbico%7D, tambor: %7Btambor%7D%22\n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-18_17-08-26",
+            "content": "@@ -1815,174 +1815,4 @@\n or%7D%22\n-%0A    %0A%0Alapiseira = None%0A%0Awhile True:%0A    try:%0A        line = input()%0A    except EOFError:%0A        break%0A%0A    if line == %22$end%22:%0A        break%0A%0A    args = line.split()    \n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-18_17-10-09",
+            "content": "@@ -1985,486 +1985,4 @@\n     \n-%0A%0A     if args%5B0%5D == %22$init%22:%0A        lapiseira = Lapiseira(float(args%5B1%5D))%0A%0A    elif args%5B0%5D == %22$show%22:%0A        print(lapiseira)%0A%0A    elif args%5B0%5D == %22$insert%22:%0A        calibre = float(args%5B1%5D)%0A        dureza = args%5B2%5D%0A        tamanho = int(args%5B3%5D)%0A        lapiseira.insert(Grafite(calibre, dureza, tamanho))%0A%0A    elif args%5B0%5D == %22$pull%22:%0A        lapiseira.pull()%0A%0A    elif args%5B0%5D == %22$remove%22:%0A        lapiseira.remove()%0A%0A    elif args%5B0%5D == %22$write%22:%0A        lapiseira.write()\n",
+            "lines": "76"
+        },
+        {
+            "label": "2025-11-19_06-19-55",
+            "content": "@@ -1418,52 +1418,8 @@\n ()%0A%0A\n-        # Se n%C3%A3o consegue completar a folha%0A\n     \n@@ -1564,33 +1564,8 @@\n     \n-    # Consegue completar%0A\n     \n@@ -1812,16 +1812,20 @@\n ambor%7D%22%0A\n+    \n %0A%0Alapise\n@@ -1977,18 +1977,23 @@\n .split()\n+    \n %0A%0A\n+ \n     if a\n@@ -2463,9 +2463,8 @@\n .write()\n-%0A\n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-11-19_06-20-40",
+            "content": "@@ -1410,24 +1410,68 @@\n or_folha()%0A%0A\n+        # Se n%C3%A3o consegue completar a folha%0A\n         if s\n@@ -1600,16 +1600,45 @@\n return%0A%0A\n+        # Consegue completar%0A\n         \n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-19_06-21-25",
+            "content": "@@ -1349,32 +1349,40 @@\n          return%0A\n+        \n %0A        gasto =\n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-11-19_06-22-17",
+            "content": "@@ -647,17 +647,17 @@\n incompat\n-i\n+%C3%AD\n vel%22)%0A  \n@@ -1246,33 +1246,32 @@\n          return%0A\n-%0A\n         if self.\n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-11-19_06-23-43",
+            "content": "@@ -272,17 +272,21 @@\n urn mapa\n-%5B\n+.get(\n self.dur\n@@ -288,17 +288,20 @@\n f.dureza\n-%5D\n+, 1)\n %0A%0A    de\n@@ -651,9 +651,9 @@\n mpat\n-%C3%AD\n+i\n vel%22\n@@ -1806,16 +1806,22 @@\n %7D%22%0A%0A%0Alap\n+iseira\n  = None%0A\n@@ -1868,16 +1868,8 @@\n ut()\n-.strip()\n %0A   \n@@ -1912,16 +1912,22 @@\n  if \n-not \n line\n+ == %22$end%22\n :%0A  \n@@ -1936,16 +1936,13 @@\n     \n-continue\n+break\n %0A%0A  \n@@ -1967,25 +1967,23 @@\n t()%0A\n+%0A\n     \n-cmd =\n+if\n  args%5B0%5D\n %0A%0A  \n@@ -1982,84 +1982,14 @@\n s%5B0%5D\n-%0A%0A    print(%22$%22 + line)%0A%0A    if cmd == %22end%22:%0A        break%0A%0A    if cmd\n  == %22\n+$\n init\n@@ -2002,16 +2002,22 @@\n      lap\n+iseira\n  = Lapis\n@@ -2047,24 +2047,29 @@\n    elif \n-cmd\n+args%5B0%5D\n  == %22\n+$\n show%22:%0A \n@@ -2084,16 +2084,22 @@\n rint(lap\n+iseira\n )%0A%0A    e\n@@ -2102,24 +2102,29 @@\n    elif \n-cmd\n+args%5B0%5D\n  == %22\n+$\n insert%22:\n@@ -2136,64 +2136,146 @@\n     \n-lap.insert(Grafite(float(args%5B1%5D), args%5B2%5D, int(args%5B3%5D)\n+calibre = float(args%5B1%5D)%0A        dureza = args%5B2%5D%0A        tamanho = int(args%5B3%5D)%0A        lapiseira.insert(Grafite(calibre, dureza, tamanho\n ))%0A%0A\n@@ -2283,24 +2283,29 @@\n    elif \n-cmd\n+args%5B0%5D\n  == %22\n+$\n pull%22:%0A \n@@ -2314,16 +2314,22 @@\n      lap\n+iseira\n .pull()%0A\n@@ -2338,24 +2338,29 @@\n    elif \n-cmd\n+args%5B0%5D\n  == %22\n+$\n remove%22:\n@@ -2371,16 +2371,22 @@\n      lap\n+iseira\n .remove(\n@@ -2401,16 +2401,21 @@\n lif \n-cmd\n+args%5B0%5D\n  == %22\n+$\n writ\n@@ -2429,16 +2429,22 @@\n      lap\n+iseira\n .write()\n",
+            "lines": "98"
+        },
+        {
+            "label": "2025-11-19_06-30-14",
+            "content": "class Grafite:\n    def __init__(self, calibre: float, dureza: str, tamanho: int):\n        self.calibre = calibre\n        self.dureza = dureza\n        self.tamanho = tamanho\n\n    def desgaste_por_folha(self):\n        mapa = {\"HB\": 1, \"2B\": 2, \"4B\": 4, \"6B\": 6}\n        return mapa[self.dureza]\n\n    def __str__(self):\n        return f\"[{self.calibre}:{self.dureza}:{self.tamanho}]\"\n\n\nclass Lapiseira:\n    def __init__(self, calibre: float):\n        self.calibre = calibre\n        self.bico = None\n        self.tambor = []\n\n    def insert(self, grafite: Grafite):\n        if grafite.calibre != self.calibre:\n            print(\"fail: calibre incompat\u00edvel\")\n            return\n        self.tambor.append(grafite)\n\n    def pull(self):\n        if self.bico is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return\n        if not self.tambor:\n            print(\"fail: nao existe grafite no tambor\")\n            return\n        self.bico = self.tambor.pop(0)\n\n    def remove(self):\n        if self.bico is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n        self.bico = None\n\n    def write(self):\n        if self.bico is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n\n        if self.bico.tamanho <= 10:\n            print(\"fail: tamanho insuficiente\")\n            return\n\n        gasto = self.bico.desgaste_por_folha()\n\n        if self.bico.tamanho - gasto < 10:\n            self.bico.tamanho = 10\n            print(\"fail: folha incompleta\")\n            return\n\n        self.bico.tamanho -= gasto\n\n    def __str__(self):\n        bico = str(self.bico) if self.bico else \"[]\"\n        tambor = \"<\" + \"\".join(str(g) for g in self.tambor) + \">\"\n        return f\"calibre: {self.calibre}, bico: {bico}, tambor: {tambor}\"\n\n\nlap = None\n\nwhile True:\n    try:\n        line = input().strip()\n    except EOFError:\n        break\n\n    if not line:\n        continue\n\n    args = line.split()\n    cmd = args[0]\n\n    print(\"$\" + line)\n\n    if cmd == \"end\":\n        break\n\n    if cmd == \"init\":\n        lap = Lapiseira(float(args[1]))\n\n    elif cmd == \"show\":\n        print(lap)\n\n    elif cmd == \"insert\":\n        lap.insert(Grafite(float(args[1]), args[2], int(args[3])))\n\n    elif cmd == \"pull\":\n        lap.pull()\n\n    elif cmd == \"remove\":\n        lap.remove()\n\n    elif cmd == \"write\":\n        lap.write()\n",
+            "lines": "101"
+        }
+    ]
+}

@@ -29,7 +29,7 @@ class Market:
         if index < 0 or index >= len(self.counter):
             print("fail: caixa inexistente")
             return
-        if self.counter[index] is None:
+        if self.counter[index] is None: 
             print("fail: caixa vazio")
             return
         self.counter[index] = None
